@@ -24,3 +24,20 @@
            |________________|___________|             monitoring  
                             |____________________________|
   </pre>  
+
+* Complete flow/Architectur: 
+  > Design the entire machine learning operations pipeline by using various tools
+  <pre>
+  Github <- Git <- [building] /________       (Docker file)          _____________
+                              \        |           |                |             |                                |           |                |             v
+                                       |        (Image)             |         Azure repo
+                                       |           |                |             |
+                                       |           | CD             |             | CD'  
+                                       |           v                |             v
+  Pytest <- tox <- [testing] -> CI--------> Github Action server    |        Azure server
+                                       |                            |             |
+              [unit]    [integrate]    |                            |             |
+                                       | CT {AirFlow}               |             v
+           test cases   test cases     |____________________________|_______Monitoring {evidently.ai}
+                |___________|_______________________________________| 
+  </pre>
