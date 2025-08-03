@@ -68,3 +68,16 @@
 * (57:00) Git commit 提交 ()
 
 * (1:04:00) `experiment/experiments.ipynb`
+
+# Lecture 10 Note -- [MLOps End to End Project - Model Building](https://www.youtube.com/watch?v=6TvfUdnUXNY)
+
+* (32:45) Machine Learning Pipeline
+  1. data ingestion
+  2. EDA
+  3. Preprocessing
+  - outlier data
+  - transforming data
+  - handling missing value
+  - imbalanced data
+  - encoding step
+  4. Model
