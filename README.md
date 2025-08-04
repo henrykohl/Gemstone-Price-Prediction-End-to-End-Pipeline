@@ -71,6 +71,9 @@
 
 # Lecture 10 Note -- [MLOps End to End Project - Model Building](https://www.youtube.com/watch?v=6TvfUdnUXNY)
 
+* 自行建立 `notebooks/data` 資料夾，放入 `raw.csv`、`test.csv`、`train.csv`三個資料檔案 -- [Resource](https://github.com/abhijitpaul0212/GemstonePricePrediction/tree/master/artifacts)
+  > `raw.csv` is `gemstone.csv` used in Lecture 10.
+
 * (32:45) Machine Learning Pipeline
   1. data ingestion
   2. EDA
@@ -81,3 +84,17 @@
   - imbalanced data
   - encoding step
   4. Model
+
+  # Lecture 11 Note -- [MLFlow & DVC integration](https://www.youtube.com/watch?v=fhWVCMjXmw0)
+
+  * (21:36) 完成 `src/exception/exception.py`
+
+  * (30:55) 建立 `test.py`
+    ```python
+    import sys
+    print(sys.exc_info())
+    ```
+
+  * (41:38) 完成 `src/logger/logging.py`
+
+  * (54:08) 完成 `test.py`
