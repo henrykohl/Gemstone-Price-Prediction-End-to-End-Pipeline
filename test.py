@@ -1,3 +1,6 @@
+# import sys
+# print(sys.exc_info())
+
 from src.logger.logging import logging
 
 logging.info("this is myb testing")
