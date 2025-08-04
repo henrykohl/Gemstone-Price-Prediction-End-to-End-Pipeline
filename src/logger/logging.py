@@ -17,5 +17,9 @@ logging.basicConfig(level=logging.INFO,
                     
 )
             #[2024-01-10 15:57:26,997] 6 root - INFO -  this my second tesgting
+# if __name__ == '__main__' # 不知為何 Lecture demo 時，直接執行 python test.py 會出錯  
+#   logging.info("here again i am testing")
+
+# 在其他檔案使用 from src.logger.logging import logging 就沒問題
 
 
