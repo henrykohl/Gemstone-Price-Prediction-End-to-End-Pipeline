@@ -98,3 +98,8 @@
   * (41:38) 完成 `src/logger/logging.py`
 
   * (54:08) 完成 `test.py`
+    > 執行 `python test.py`
+
+  * (57:43) git commit
+
+  * (1:05:00) 完成 `src/components/data_ingestion.py`
