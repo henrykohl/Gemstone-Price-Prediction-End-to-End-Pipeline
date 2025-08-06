@@ -106,19 +106,19 @@ class DataTransformation:
             
             logging.info("Applying preprocessing object on training and testing datasets.")
             
-            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
-            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
+            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)] # column 變多
+            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)] # column 變多
 
             save_object(
-                file_path=self.data_transformation_config.preprocessor_obj_file_path,
-                obj=preprocessing_obj
+                file_path=self.data_transformation_config.preprocessor_obj_file_path, # pkl 存檔途徑
+                obj=preprocessing_obj # sklearn.compose._column_transformer.ColumnTransformer 物件
             )
             
             logging.info("preprocessing pickle file saved")
             
             return (
-                train_arr,
-                test_arr
+                train_arr, # numpy.ndarray 類型
+                test_arr  # numpy.ndarray 類型
             )
             
         except Exception as e:

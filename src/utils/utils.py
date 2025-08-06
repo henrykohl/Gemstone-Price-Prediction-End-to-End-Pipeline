@@ -39,7 +39,7 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
 
             report[list(models.keys())[i]] =  test_model_score
 
-        return report
+        return report # {模型名：r2分數，...}
 
     except Exception as e:
         logging.info('Exception occured during model training')
