@@ -149,3 +149,16 @@
 
 * (2:17:05) Git commit
 
+# Lecture 12 Note -- [MLFlow & DVC integration - Part 2](https://www.youtube.com/watch?v=FeJkHlCX3m0)
+
+* (12:48) recap `src/pipeline/training_pipeline.py`
+
+* (14:00) 建立 `src/pipeline/prediction_pipeline.py` (20:49 完成)
+
+* (16:45) 執行
+  ```bash
+  source activate ./env
+  python src/pipeline/training_pipeline.py
+  ```
+
+* (20:32) 建立 `app.py`
