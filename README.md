@@ -102,4 +102,42 @@
 
   * (57:43) git commit
 
-  * (1:05:00) 完成 `src/components/data_ingestion.py`
+  * (1:05:00) 建立 `src/components/data_ingestion.py`
+
+  * (1:13:33) 建立 `src/components/data_transformation.py`
+
+  * Machine Learning
+    1. Training Pipeline
+    - 1. Data Ingestion
+    - 2. Data Transformation -> OBJ -- Scaling, Encoded
+    - 3. Model Training
+    - 4. Evaluation
+    2. Prediction Pipeline -- bulk, single value
+    - having Data
+    - 1. Transformation
+    - 2. Prediction
+
+  * (1:19:51) 完成 `src/utils/utils.py`
+
+  * (1:26:21) 建立 `src/components/model_trainer.py`
+
+  * (1:29:30) 建立 `src/components/model_evaluation.py`
+
+  * (1:30:55) Git commit
+
+
+  * 1:35:00
+    <pre>
+    </pre>
+
+
+  * (1:40:00) 完成 `src/components/data_ingestion.py`
+    > 用 data=pd.read_csv("https://raw.githubusercontent.com/henrykohl/Gemstone-Price-Prediction-End-to-End-Pipeline/refs/heads/main/notebooks/data/raw.csv") \
+    > 取代 data=pd.read_csv("https://raw.githubusercontent.com/sunnysavita10/fsdsmendtoend/main/notebooks/data/gemstone.csv")
+
+  * (1:55:05) 完成 `src/components/data_transformation.py`
+
+  * (1:55:40) 完成 `src/components/model_trainer.py`
+
+  * (1:56:15) 完成 `src/pipeline/training_pipeline.py`
+            
