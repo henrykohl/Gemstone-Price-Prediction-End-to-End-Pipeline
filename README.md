@@ -139,5 +139,13 @@
 
   * (1:55:40) 完成 `src/components/model_trainer.py`
 
-  * (1:56:15) 完成 `src/pipeline/training_pipeline.py`
+  * (1:56:15) 建立 `src/pipeline/training_pipeline.py` (2:08:05 完成)
             
+  * (2:11:08) 執行
+    ```bash
+    source activate ./env
+    python src/pipeline/training_pipeline.py
+    ```
+
+* (2:17:05) Git commit
+
