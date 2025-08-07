@@ -7,15 +7,16 @@ from src.utils.utils import load_object
 
 
 class PredictPipeline:
-
+    # def __new__(self): # 測試用
+    #     print("hello this is community session")
     
     def __init__(self):
         print("init.. the object")
 
     def predict(self,features):
         try:
-            preprocessor_path=os.path.join("artifacts","preprocessor.pkl")
-            model_path=os.path.join("artifacts","model.pkl")
+            preprocessor_path=os.path.join("artifacts","preprocessor.pkl") # ColumnTransformer 存檔路徑
+            model_path=os.path.join("artifacts","model.pkl") # 模型存檔路徑
 
             preprocessor=load_object(preprocessor_path)
             model=load_object(model_path)

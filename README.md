@@ -126,8 +126,23 @@
   * (1:30:55) Git commit
 
 
-  * 1:35:00
+  * 1:35:00 a few more concepts
     <pre>
+    SRC
+      |----component
+                |----------Data Ingestion, DI         
+                |----------Data Transformation, DT     ~~~\  Pipeline     
+                |----------Model Trainer, MT           ~~~/     |------> Training
+                |----------Model Evaluation, ME                 |------> Prediction
+                                                                                              
+                                                                                             
+       (config)   (config)   (config) 
+          |          |          |
+          v          v          v
+         |DI| ----> |DT| ----> |MT| ----> |ME|
+          |       ^  |       ^  |       ^
+          v       |  v       |  v       |   
+         (artifact) (artifact) (artifact) 
     </pre>
 
 
@@ -153,7 +168,7 @@
 
 * (12:48) recap `src/pipeline/training_pipeline.py`
 
-* (14:00) 建立 `src/pipeline/prediction_pipeline.py` (20:49 完成)
+* (14:00) 建立 `src/pipeline/prediction_pipeline.py` (47:00 完成，除class CustomData)
 
 * (16:45) 執行
   ```bash
@@ -162,3 +177,40 @@
   ```
 
 * (20:32) 建立 `app.py`
+
+* (24:23) Git commit
+
+* (36:00) prediction pipeline
+  1. Data 
+      - Bulk 
+      - Single
+  2. Preprocessing
+  3. Model --> Prediction
+  4. Evaluate
+
+* (47:00) Git commit
+
+* (50:00) 完成 `app.py`
+
+* (53:40) 建立 `/templates`
+
+* 完成 `/templates/index.html`
+
+* 完成 `app.py` (除了 `predict_datapoint()` 之外)
+  ```python
+  def predict_datapoint():
+  ```
+
+* (57:50) 執行 `python app.py` 後，開啟 browser (網址最後為 `:8000`)
+
+* (58:50) 完成 `/templates/form.html`
+
+* (1:00:20) 完成 `app.py` 中 `predict_datapoint()`
+
+* (1:03:00) 執行 `python app.py` 後，開啟 browser (網址最後為 `:8000/predict`) -- 檢視頁面
+
+* (1:23:00) 完成 `/templates/result.html`
+
+* (1:24:42) 執行 `python app.py` 後，開啟 browser (網址最後為 `:8000/predict`)
+
+* (1:33:55) Git commit
