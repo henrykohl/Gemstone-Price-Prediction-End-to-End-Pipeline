@@ -178,7 +178,11 @@
 
 * (20:32) 建立 `app.py`
 
-* (24:23) Git commit
+* (20:50) 開始編寫 `src/pipeline/prediction_pipeline.py` 
+
+* (23:10) 回看 `src/utils/utils.py` 的 `def load_object(file_path):`
+
+* (24:23) Git commit (create prefiction file) -- 只完成 import 的那部分
 
 * (36:00) prediction pipeline
   1. Data 
