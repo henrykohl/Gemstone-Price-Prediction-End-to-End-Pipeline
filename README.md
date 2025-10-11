@@ -183,6 +183,9 @@
 * (23:10) 回看 `src/utils/utils.py` 的 `def load_object(file_path):`
 
 * (24:23) Git commit (create prefiction file) -- 只完成 import 的那部分
+  > `git config -l`
+
+* (30:00) 繼續編寫 `src/pipeline/prediction_pipeline.py`  
 
 * (36:00) prediction pipeline
   1. Data 
