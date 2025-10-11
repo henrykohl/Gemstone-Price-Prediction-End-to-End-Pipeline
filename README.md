@@ -195,9 +195,9 @@
   3. Model --> Prediction
   4. Evaluate
 
-* (47:00) Git commit
+* (47:00) Git commit -- class CustomData 未完成
 
-* (50:00) 完成 `app.py`
+* (49:30) 開始編寫 `app.py`
 
 * (53:40) 建立 `/templates`
 
