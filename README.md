@@ -208,7 +208,7 @@
   def predict_datapoint():
   ```
 
-* (57:50) 執行 `python app.py` 後，開啟 browser (網址最後為 `:8000`)
+* (57:50) 測試，執行 `python app.py` 後，開啟 browser (網址最後為 `:8000`)
 
 * (58:50) 完成 `/templates/form.html`
 
@@ -219,5 +219,17 @@
 * (1:23:00) 完成 `/templates/result.html`
 
 * (1:24:42) 執行 `python app.py` 後，開啟 browser (網址最後為 `:8000/predict`)
+  <pre>
+  Carat: 1.23
+  Depth: 23
+  Table: 5
+  x: 0.32
+  y: 5.1
+  z: 1.1432
+  Cut: Good
+  Color: F
+  Clarity: VVS2
+  結果--25981.28
+  </pre>
 
-* (1:33:55) Git commit
+* (1:33:55) Git commit "app created"
