@@ -85,82 +85,91 @@
   - encoding step
   4. Model
 
-  # Lecture 11 Note -- [MLFlow & DVC integration](https://www.youtube.com/watch?v=fhWVCMjXmw0)
+# Lecture 11 Note -- [MLFlow & DVC integration](https://www.youtube.com/watch?v=fhWVCMjXmw0)
 
-  * (21:36) 完成 `src/exception/exception.py`
+* (21:36) 完成 `src/exception/exception.py`
 
-  * (30:55) 建立 `test.py`
-    ```python
-    import sys
-    print(sys.exc_info())
-    ```
+* (30:55) 建立 `test.py`
+  ```python
+  import sys
+  print(sys.exc_info())
+  ```
 
-  * (41:38) 完成 `src/logger/logging.py`
+* (41:38) 完成 `src/logger/logging.py`
+  > (44:31) 執行 `python src/logger/logging.py` \
+  > > Lecture demo 時，執行 `python src/logger/logging.py` 出錯，錯誤訊息“circular import” \
+  >
+  > (47:46) 在 `experiment/experiments.ipynb` 上測試 `logging.py` 執行，沒問題
+  > > Lecture demo 接著執行 `python test.py` ，也沒有問題 
+  >
+  > 小結論：在其他檔案使用 `from src.logger.logging import logging` 沒問題
 
-  * (54:08) 完成 `test.py`
-    > 執行 `python test.py`
+* 建立 `src/logger/__init__.py` 與 `src/exception/__init__.py`
 
-  * (57:43) git commit
+* (54:08) 完成 `test.py`
+  > (55:08) 執行 `python test.py`
 
-  * (1:05:00) 建立 `src/components/data_ingestion.py`
+* (57:43) Git commit (logger and exception updated)
 
-  * (1:13:33) 建立 `src/components/data_transformation.py`
+* (1:05:00) 建立 `src/components/data_ingestion.py` (內容未完成)
 
-  * Machine Learning
-    1. Training Pipeline
-    - 1. Data Ingestion
-    - 2. Data Transformation -> OBJ -- Scaling, Encoded
-    - 3. Model Training
-    - 4. Evaluation
-    2. Prediction Pipeline -- bulk, single value
-    - having Data
-    - 1. Transformation
-    - 2. Prediction
+* (1:13:33) 建立 `src/components/data_transformation.py` (內容未完成)
 
-  * (1:19:51) 完成 `src/utils/utils.py`
+* Machine Learning
+  1. Training Pipeline
+  - 1. Data Ingestion
+  - 2. Data Transformation -> OBJ -- Scaling, Encoded
+  - 3. Model Training
+  - 4. Evaluation
+  2. Prediction Pipeline -- bulk, single value
+  - having Data
+  - 1. Transformation
+  - 2. Prediction
 
-  * (1:26:21) 建立 `src/components/model_trainer.py`
+* (1:19:51) 完成 `src/utils/utils.py`
 
-  * (1:29:30) 建立 `src/components/model_evaluation.py`
+* (1:26:21) 建立 `src/components/model_trainer.py`
 
-  * (1:30:55) Git commit
+* (1:29:30) 建立 `src/components/model_evaluation.py`
 
-
-  * 1:35:00 a few more concepts
-    <pre>
-    SRC
-      |----component
-                |----------Data Ingestion, DI         
-                |----------Data Transformation, DT     ~~~\  Pipeline     
-                |----------Model Trainer, MT           ~~~/     |------> Training
-                |----------Model Evaluation, ME                 |------> Prediction
-                                                                                              
-                                                                                             
-       (config)   (config)   (config) 
-          |          |          |
-          v          v          v
-         |DI| ----> |DT| ----> |MT| ----> |ME|
-          |       ^  |       ^  |       ^
-          v       |  v       |  v       |   
-         (artifact) (artifact) (artifact) 
-    </pre>
+* (1:30:55) Git commit ("structure updated")
 
 
-  * (1:40:00) 完成 `src/components/data_ingestion.py`
-    > 用 data=pd.read_csv("https://raw.githubusercontent.com/henrykohl/Gemstone-Price-Prediction-End-to-End-Pipeline/refs/heads/main/notebooks/data/raw.csv") \
-    > 取代 data=pd.read_csv("https://raw.githubusercontent.com/sunnysavita10/fsdsmendtoend/main/notebooks/data/gemstone.csv")
+* 1:35:00 a few more concepts
+  <pre>
+  SRC
+    |----component
+              |----------Data Ingestion, DI         
+              |----------Data Transformation, DT     ~~~\  Pipeline     
+              |----------Model Trainer, MT           ~~~/     |------> Training
+              |----------Model Evaluation, ME                 |------> Prediction
+                                                                                            
+                                                                                            
+      (config)   (config)   (config) 
+        |          |          |
+        v          v          v
+        |DI| ----> |DT| ----> |MT| ----> |ME|
+        |       ^  |       ^  |       ^
+        v       |  v       |  v       |   
+        (artifact) (artifact) (artifact) 
+  </pre>
 
-  * (1:55:05) 完成 `src/components/data_transformation.py`
 
-  * (1:55:40) 完成 `src/components/model_trainer.py`
+* (1:40:00) 完成 `src/components/data_ingestion.py`
+  > 用 data=pd.read_csv("https://raw.githubusercontent.com/henrykohl/Gemstone-Price-Prediction-End-to-End-Pipeline/refs/heads/main/notebooks/data/raw.csv") \
+  > 取代 data=pd.read_csv("https://raw.githubusercontent.com/sunnysavita10/fsdsmendtoend/main/notebooks/data/gemstone.csv")
 
-  * (1:56:15) 建立 `src/pipeline/training_pipeline.py` (2:08:05 完成)
-            
-  * (2:11:08) 執行
-    ```bash
-    source activate ./env
-    python src/pipeline/training_pipeline.py
-    ```
+* (1:55:05) 完成 `src/components/data_transformation.py`
+
+* (1:55:40) 完成 `src/components/model_trainer.py`
+
+* (1:56:15) 建立 `src/pipeline/training_pipeline.py` (2:08:05 完成)
+          
+* (2:11:08) 執行
+  ```bash
+  source activate ./env
+  python src/pipeline/training_pipeline.py
+  ```
 
 * (2:17:05) Git commit
 

@@ -8,7 +8,7 @@ from src.exception.exception import customexception
 
 from sklearn.metrics import r2_score, mean_absolute_error,mean_squared_error
 
-def save_object(file_path, obj):
+def save_object(file_path, obj): ## obj 可以是 Model 也可以是 Preprocess
     try:
         dir_path = os.path.dirname(file_path)
 
