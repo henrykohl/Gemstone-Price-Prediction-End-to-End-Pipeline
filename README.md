@@ -157,7 +157,9 @@
 
 * (1:40:00) 完成 `src/components/data_ingestion.py`
   > 用 data=pd.read_csv("https://raw.githubusercontent.com/henrykohl/Gemstone-Price-Prediction-End-to-End-Pipeline/refs/heads/main/notebooks/data/raw.csv") \
-  > 取代 data=pd.read_csv("https://raw.githubusercontent.com/sunnysavita10/fsdsmendtoend/main/notebooks/data/gemstone.csv")
+  > 取代 data=pd.read_csv("https://raw.githubusercontent.com/sunnysavita10/fsdsmendtoend/main/notebooks/data/gemstone.csv") \
+  > (1:48:12) 執行 `src/components/data_ingestion.py`
+  > > 建立 `artifact` 資料夾，並包含三個檔案
 
 * (1:55:05) 完成 `src/components/data_transformation.py`
 
