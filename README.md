@@ -88,12 +88,14 @@
 # Lecture 11 Note -- [MLFlow & DVC integration](https://www.youtube.com/watch?v=fhWVCMjXmw0)
 
 * (21:36) 完成 `src/exception/exception.py`
+  > 在根目錄執行 `python -m src.exception.exception`，用以測試(Colab 沒問題)
 
 * (30:55) 建立 `test.py`
   ```python
   import sys
   print(sys.exc_info())
   ```
+  > Colab 測試時顯示: (None, None, None)
 
 * (41:38) 完成 `src/logger/logging.py`
   > (44:31) 執行 `python src/logger/logging.py` \

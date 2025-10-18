@@ -6,7 +6,7 @@ class customexception(Exception):
     def __init__(self,error_message,error_details:sys): # error_message: Exception, error_detail: sys
         self.error_message=error_message
         _,_,exc_tb=error_details.exc_info() # exc type, exc value, exc tb
-        print(exc_tb)
+        print(exc_tb) ## 顯示 '<traceback object at 位置>'
 
         self.lineno=exc_tb.tb_lineno
         self.file_name=exc_tb.tb_frame.f_code.co_filename
@@ -21,5 +21,5 @@ if __name__=="__main__":
         a=1/0
 
     except Exception as e:
-        #print(e)
+        #print(e) ## 顯示 'division by zero'
         raise customexception(e,sys)
