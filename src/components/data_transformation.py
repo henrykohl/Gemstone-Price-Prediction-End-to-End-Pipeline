@@ -32,13 +32,13 @@ class DataTransformation:
             logging.info('Data Transformation initiated')
             
             # Define which columns should be ordinal-encoded and which should be scaled
-            categorical_cols = ['cut', 'color','clarity']
-            numerical_cols = ['carat', 'depth','table', 'x', 'y', 'z']
+            categorical_cols = ['cut', 'color','clarity']                ## 物件類的 column
+            numerical_cols = ['carat', 'depth','table', 'x', 'y', 'z']   ## 數值類的 column
             
             # Define the custom ranking for each ordinal variable
-            cut_categories = ['Fair', 'Good', 'Very Good','Premium','Ideal']
-            color_categories = ['D', 'E', 'F', 'G', 'H', 'I', 'J']
-            clarity_categories = ['I1','SI2','SI1','VS2','VS1','VVS2','VVS1','IF']
+            cut_categories = ['Fair', 'Good', 'Very Good','Premium','Ideal'] ## 左到右，由差到好
+            color_categories = ['D', 'E', 'F', 'G', 'H', 'I', 'J']           ## （？）左到右，由好到差
+            clarity_categories = ['I1','SI2','SI1','VS2','VS1','VVS2','VVS1','IF'] ## 左到右，由低到高
             
             logging.info('Pipeline Initiated')
             
