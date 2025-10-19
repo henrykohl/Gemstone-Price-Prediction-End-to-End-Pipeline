@@ -101,17 +101,17 @@
   > (44:31) 執行 `python src/logger/logging.py` \
   > > Lecture demo 時，執行 `python src/logger/logging.py` 出錯，錯誤訊息“circular import” \
   >
-  > (47:46) 在 `experiment/experiments.ipynb` 上測試 `logging.py` 執行，沒問題
+  > (47:46) 在 `experiment/experiments.ipynb` 上，將 `logging.py` 內容貼到 cell 中執行，沒問題
   > > Lecture demo 接著執行 `python test.py` ，也沒有問題 
   >
   > 小結論：在其他檔案使用 `from src.logger.logging import logging` 沒問題
 
 * 建立 `src/logger/__init__.py` 與 `src/exception/__init__.py`
 
-* (54:08) 完成 `test.py`
+* (54:08) 完成 `test.py` (測試 `logging.py` 功能)
   > (55:08) 執行 `python test.py`
 
-* (57:43) Git commit (logger and exception updated)
+* (57:43) Git commit ("logger and exception updated")
 
 * (1:05:00) 建立 `src/components/data_ingestion.py` (內容未完成)
 
@@ -160,7 +160,7 @@
 * (1:40:00) 完成 `src/components/data_ingestion.py`
   > 用 data=pd.read_csv("https://raw.githubusercontent.com/henrykohl/Gemstone-Price-Prediction-End-to-End-Pipeline/refs/heads/main/notebooks/data/raw.csv") \
   > 取代 data=pd.read_csv("https://raw.githubusercontent.com/sunnysavita10/fsdsmendtoend/main/notebooks/data/gemstone.csv") \
-  > (1:48:12) 執行 `src/components/data_ingestion.py`
+  > (1:48:12) 執行 `python src/components/data_ingestion.py`
   > > 建立 `artifact` 資料夾，並包含三個檔案
 
 * (1:55:05) 完成 `src/components/data_transformation.py`
