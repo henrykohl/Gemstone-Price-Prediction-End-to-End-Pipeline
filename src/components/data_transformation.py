@@ -81,33 +81,34 @@ class DataTransformation:
     
     def initialize_data_transformation(self,train_path,test_path):
         try:
-            train_df=pd.read_csv(train_path)
-            test_df=pd.read_csv(test_path)
+            train_df=pd.read_csv(train_path) ## 讀取 artifacts/train.csv 成 DataFrame 物件
+            test_df=pd.read_csv(test_path)  ## 讀取 artifacts/test.csv 成 DataFrame 物件
             
             logging.info("read train and test data complete")
             logging.info(f'Train Dataframe Head : \n{train_df.head().to_string()}')
             logging.info(f'Test Dataframe Head : \n{test_df.head().to_string()}')
             
-            preprocessing_obj = self.get_data_transformation()
+            preprocessing_obj = self.get_data_transformation() ## 獲得 ColumnTransformer 物件
             
             target_column_name = 'price'
-            drop_columns = [target_column_name,'id']
+            drop_columns = [target_column_name,'id'] ## 要去除的 column 欄位(s): ‘price’ 與 ‘id’
             
-            input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
-            target_feature_train_df=train_df[target_column_name]
+            input_feature_train_df = train_df.drop(columns=drop_columns,axis=1) ## DataFrame 類型
+            target_feature_train_df=train_df[target_column_name] ## Series 類型
             
             
-            input_feature_test_df=test_df.drop(columns=drop_columns,axis=1)
-            target_feature_test_df=test_df[target_column_name]
+            input_feature_test_df=test_df.drop(columns=drop_columns,axis=1) ## DataFrame 類型
+            target_feature_test_df=test_df[target_column_name] ## Series 類型
             
-            input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
+            input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df) ## numpy.ndarray (都實數)
             
-            input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
+            input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df) ## numpy.ndarray (都實數)
             
             logging.info("Applying preprocessing object on training and testing datasets.")
             
-            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)] # column 變多
-            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)] # column 變多
+            ## 把 (2D) numpy.ndarray 與 Series 相連接: Series 會成為一個新 column
+            train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)] # column 數+1
+            test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)] # column 數+1
 
             save_object(
                 file_path=self.data_transformation_config.preprocessor_obj_file_path, # pkl 存檔途徑
