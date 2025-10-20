@@ -14,12 +14,12 @@ from sklearn.linear_model import LinearRegression, Ridge,Lasso,ElasticNet
 
 @dataclass 
 class ModelTrainerConfig:
-    trained_model_file_path = os.path.join('artifacts','model.pkl')
+    trained_model_file_path = os.path.join('artifacts','model.pkl') ## 訓練模型物件檔路徑
     
     
 class ModelTrainer:
     def __init__(self):
-        self.model_trainer_config = ModelTrainerConfig()
+        self.model_trainer_config = ModelTrainerConfig() ## 用以存取 訓練模型物件檔路徑
     
     def initate_model_training(self,train_array,test_array):
         try:

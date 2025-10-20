@@ -17,12 +17,12 @@ from src.utils.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts','preprocessor.pkl')
+    preprocessor_obj_file_path=os.path.join('artifacts','preprocessor.pkl') ## 預處理物件檔路徑
 
 
 class DataTransformation:
     def __init__(self):
-        self.data_transformation_config=DataTransformationConfig()
+        self.data_transformation_config=DataTransformationConfig() ## 用以存取 預處理物件檔路徑
 
         
     
@@ -118,8 +118,8 @@ class DataTransformation:
             logging.info("preprocessing pickle file saved")
             
             return (
-                train_arr, # numpy.ndarray 類型
-                test_arr  # numpy.ndarray 類型
+                train_arr, # numpy.ndarray 類型 (2D)
+                test_arr  # numpy.ndarray 類型 (2D)
             )
             
         except Exception as e:

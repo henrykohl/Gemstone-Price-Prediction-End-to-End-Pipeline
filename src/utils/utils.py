@@ -20,7 +20,14 @@ def save_object(file_path, obj): ## obj 可以是 Model 也可以是 Preprocess
     except Exception as e:
         raise customexception(e, sys)
     
-def evaluate_model(X_train,y_train,X_test,y_test,models):
+def evaluate_model(X_train,y_train,X_test,y_test,models): 
+    """
+    X_train: numpy.ndarray 物件
+    y_train: Series 物件
+    X_test: numpy.ndarray 物件
+    y_test: Series 物件
+    models: dict 物件 等於 {模型名:模型,...}
+    """
     try:
         report = {}
         for i in range(len(models)):
@@ -31,7 +38,7 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
             
 
             # Predict Testing data
-            y_test_pred =model.predict(X_test)
+            y_test_pred =model.predict(X_test) ## 輸入 numpy.ndarray 類型 (2D) 輸出 Series
 
             # Get R2 scores for train and test data
             #train_model_score = r2_score(ytrain,y_train_pred)
