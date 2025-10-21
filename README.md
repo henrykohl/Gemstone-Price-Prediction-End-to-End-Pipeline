@@ -165,9 +165,9 @@
 
 * (1:55:05) 完成 `src/components/data_transformation.py`
 
-* (1:55:40) 完成 `src/components/model_trainer.py`
+* (1:55:40) 完成 `src/components/model_trainer.py` (2:08:05 完成)
 
-* (1:56:15) 建立 `src/pipeline/training_pipeline.py` (2:08:05 完成)
+* (1:56:15) 建立 `src/pipeline/training_pipeline.py` 
           
 * (2:11:08) 執行
   ```bash
@@ -176,6 +176,8 @@
   ```
 
 * (2:17:05) Git commit
+
+* 注意，`src/components/model_evaluation.py` 尚未完成
 
 # Lecture 12 Note -- [MLFlow & DVC integration - Part 2](https://www.youtube.com/watch?v=FeJkHlCX3m0)
 

@@ -21,14 +21,14 @@ class ModelTrainer:
     def __init__(self):
         self.model_trainer_config = ModelTrainerConfig() ## 用以存取 訓練模型物件檔路徑
     
-    def initate_model_training(self,train_array,test_array):
+    def initate_model_training(self,train_array,test_array): ## numpy.ndarray (2D), numpy.ndarray (2D)
         try:
             logging.info('Splitting Dependent and Independent variables from train and test data')
             X_train, y_train, X_test, y_test = (
-                train_array[:,:-1], # 所有 row，去除最後的column
-                train_array[:,-1], # 所有 row，與最後的column
-                test_array[:,:-1], # 所有 row，去除最後的column
-                test_array[:,-1]  # 所有 row，與最後的column
+                train_array[:,:-1], # numpy.ndarray (2D), 所有 row，去除最後的column
+                train_array[:,-1], # numpy.ndarray (1D), 所有 row，與最後的column
+                test_array[:,:-1], # numpy.ndarray (2D), 所有 row，去除最後的column
+                test_array[:,-1]  # numpy.ndarray (1D), 所有 row，與最後的column
             )
 
             models={
@@ -50,7 +50,7 @@ class ModelTrainer:
                 list(model_report.values()).index(best_model_score)
             ]
             
-            best_model = models[best_model_name]
+            best_model = models[best_model_name] ## 輸入 模型名稱; 輸出 模型物件
 
             print(f'Best Model Found , Model Name : {best_model_name} , R2 Score : {best_model_score}')
             print('\n====================================================================================\n')

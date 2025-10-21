@@ -22,10 +22,10 @@ def save_object(file_path, obj): ## obj 可以是 Model 也可以是 Preprocess
     
 def evaluate_model(X_train,y_train,X_test,y_test,models): 
     """
-    X_train: numpy.ndarray 物件
-    y_train: Series 物件
-    X_test: numpy.ndarray 物件
-    y_test: Series 物件
+    X_train: numpy.ndarray (2D) 
+    y_train: numpy.ndarray (1D) 
+    X_test: numpy.ndarray (2D) 
+    y_test: numpy.ndarray (1D) 
     models: dict 物件 等於 {模型名:模型,...}
     """
     try:
@@ -38,11 +38,11 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
             
 
             # Predict Testing data
-            y_test_pred =model.predict(X_test) ## 輸入 numpy.ndarray 類型 (2D) 輸出 Series
+            y_test_pred =model.predict(X_test) ## 輸入 numpy.ndarray (2D) 輸出 numpy.ndarray (1D)
 
             # Get R2 scores for train and test data
             #train_model_score = r2_score(ytrain,y_train_pred)
-            test_model_score = r2_score(y_test,y_test_pred)
+            test_model_score = r2_score(y_test,y_test_pred) ## 輸入: numpy.ndarray (1D), numpy.ndarray (1D)
 
             report[list(models.keys())[i]] =  test_model_score
 

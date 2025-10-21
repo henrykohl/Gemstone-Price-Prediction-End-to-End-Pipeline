@@ -13,13 +13,13 @@ class PredictPipeline:
     def __init__(self):
         print("init.. the object")
 
-    def predict(self,features):
+    def predict(self,features): ## 接收 DataFrame 物件
         try:
-            preprocessor_path=os.path.join("artifacts","preprocessor.pkl") # ColumnTransformer 存檔路徑
-            model_path=os.path.join("artifacts","model.pkl") # 模型存檔路徑
+            preprocessor_path=os.path.join("artifacts","preprocessor.pkl") ## ColumnTransformer 存檔路徑
+            model_path=os.path.join("artifacts","model.pkl") ## 模型存檔路徑
 
-            preprocessor=load_object(preprocessor_path)
-            model=load_object(model_path)
+            preprocessor=load_object(preprocessor_path) ## 載入 ColumnTransformer 物件
+            model=load_object(model_path)  ## 載入 ColumnTransformer模型 物件
 
             scaled_fea=preprocessor.transform(features)
             pred=model.predict(scaled_fea)
