@@ -13,7 +13,7 @@ class PredictPipeline:
     def __init__(self):
         print("init.. the object")
 
-    def predict(self,features): ## 接收 DataFrame 物件
+    def predict(self,features): ## 接收 DataFrame 物件 (有一個 row)
         try:
             preprocessor_path=os.path.join("artifacts","preprocessor.pkl") ## ColumnTransformer 存檔路徑
             model_path=os.path.join("artifacts","model.pkl") ## 模型存檔路徑
