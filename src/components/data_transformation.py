@@ -106,7 +106,7 @@ class DataTransformation:
             
             logging.info("Applying preprocessing object on training and testing datasets.")
             
-            ## 把 (2D) numpy.ndarray 與 Series 相連接: Series 會成為一個新 column
+            ## 把 (2D) numpy.ndarray 與 (1D) numpy.ndarray 相連接: 後者 會成為 前者 的一個新 column
             train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)] # column 數+1
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)] # column 數+1
 

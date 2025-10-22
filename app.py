@@ -25,11 +25,11 @@ def predict_datapoint():
             color=request.form.get("color"),
             clarity=request.form.get("clarity")
         )
-        final_data=data.get_data_as_dataframe()
+        final_data=data.get_data_as_dataframe() ## DataFrame (一個 row)
 
-        predict_pipeline=PredictPipeline()
+        predict_pipeline=PredictPipeline() ## 建立 PredictPipeline 物件
 
-        pred=predict_pipeline.predict(final_data)
+        pred=predict_pipeline.predict(final_data) ## 獲得
 
         result=round(pred[0],2)
 

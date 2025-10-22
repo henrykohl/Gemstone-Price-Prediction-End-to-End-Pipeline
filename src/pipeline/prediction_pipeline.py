@@ -21,7 +21,7 @@ class PredictPipeline:
             preprocessor=load_object(preprocessor_path) ## 載入 ColumnTransformer 物件
             model=load_object(model_path)  ## 載入 ColumnTransformer模型 物件
 
-            scaled_fea=preprocessor.transform(features)
+            scaled_fea=preprocessor.transform(features) ## 輸入 DataFrame (1 row) 輸出 numpy.ndarray (1D)
             pred=model.predict(scaled_fea)
 
             return pred
@@ -65,9 +65,9 @@ class CustomData:
                 'color':[self.color],
                 'clarity':[self.clarity]
                 }
-            df = pd.DataFrame(custom_data_input_dict)
+            df = pd.DataFrame(custom_data_input_dict) ## DataFrame (一個 row)
             logging.info('Dataframe Gathered')
-            return df
+            return df ## 回傳 DataFrame (一個 row)
         except Exception as e:
             logging.info('Exception Occured in prediction pipeline')
             raise customexception(e,sys)
