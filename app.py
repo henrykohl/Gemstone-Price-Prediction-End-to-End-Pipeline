@@ -29,7 +29,7 @@ def predict_datapoint():
 
         predict_pipeline=PredictPipeline() ## 建立 PredictPipeline 物件
 
-        pred=predict_pipeline.predict(final_data) ## 獲得
+        pred=predict_pipeline.predict(final_data) ## pred 的 shape 為 [1]
 
         result=round(pred[0],2)
 

@@ -21,10 +21,10 @@ class PredictPipeline:
             preprocessor=load_object(preprocessor_path) ## 載入 ColumnTransformer 物件
             model=load_object(model_path)  ## 載入 ColumnTransformer模型 物件
 
-            scaled_fea=preprocessor.transform(features) ## 輸入 DataFrame (1 row) 輸出 numpy.ndarray (1D)
-            pred=model.predict(scaled_fea)
+            scaled_fea=preprocessor.transform(features) ## 輸入 DataFrame (1 row) 輸出 numpy.ndarray (shape為[1,9])
+            pred=model.predict(scaled_fea) ## 輸入 shape 為 [1,9] 輸出 shape 為 [1]
 
-            return pred
+            return pred ## 此為純量
 
         except Exception as e:
             raise customexception(e,sys)
