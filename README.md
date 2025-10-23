@@ -226,7 +226,7 @@
 * (57:50) 測試，執行 `python app.py` 後，開啟 browser (網址最後為 `:8000`)
 
 * (58:50) 完成 `/templates/form.html`
-  > label 的 "for" 對應 select 的 "id" ?? \
+  > label 的 "for" 關聯 select 的 "id" ?? \
   > name 的值是要給 `app.py` 使用的
 
 * (1:00:20) 完成 `app.py` 中 `predict_datapoint()`
@@ -250,3 +250,9 @@
   </pre>
 
 * (1:33:55) Git commit "app created"
+
+# Lecture 13 Note -- [MLFlow & DVC integration - Part 3](https://www.youtube.com/watch?v=aS466KYOxB4)
+
+* (12:42) Review `app.py`
+  > `source activate ./env` \
+  > `python app.py`
