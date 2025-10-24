@@ -256,3 +256,34 @@
 * (12:42) Review `app.py`
   > `source activate ./env` \
   > `python app.py`
+  > - 開啟 browser (網址最後為 `:8000` 與 `:8000/predict`)
+
+* (18:05) 啟用新個 Conda Lab -- practicstools 
+  > 也算是要建立新的 GitHub
+
+* 建立 `requirements.txt`
+  ```txt
+  pandas
+  mlflow==2.2.2
+  ```
+
+* [mlflow 2.9.2](https://mlflow.org/releases/2.9.2)
+
+* [mlflow pypi 2.9.2](https://pypi.org/project/mlflow/2.9.2/)
+
+* (22:50) 執行 `conda create -p python=3.8 -y` and `source activate ./env`
+
+* (23:55) 執行 `pip install -r requirements.txt`
+
+* (26:00) 執行
+  ```bash
+  python
+  import mlflow
+  import pandas
+  exit()
+  ```
+* [MLflow Tracking Quickstart](https://mlflow.org/docs/latest/ml/tracking/quickstart/)
+
+* [Core Components of MLflow](https://mlflow.org/docs/3.0.1/introduction/)
+
+* (43:03) 建立 `experiments.py`
