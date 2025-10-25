@@ -367,3 +367,7 @@
   執行 `python experiments.py` 
 
 * (1:04:48) 執行 `mlflow ui`
+
+* (1:07:30) Demo run `mlflow ui` locally (1:16:24 done)
+
+* (1:21:10) 切換回到 Gemstone-Price-Prediction-End-to-End-Pipeline 專案
