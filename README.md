@@ -287,3 +287,83 @@
 * [Core Components of MLflow](https://mlflow.org/docs/3.0.1/introduction/)
 
 * (43:03) 建立 `experiments.py`
+  ```python
+  import mlflow
+
+  def calculator(a,b):
+      return (a*b)
+
+
+  if __name__ == '__main__':
+      a,b=1084,3470
+      result=calculator(a,b)
+      print(f"my result is {result}")
+
+  ```
+  > 執行 `python experiments.py`
+
+* (48:00) 修改 `experiments.py`
+  ```python
+  import mlflow
+
+  def calculator(a,b,operation=None):
+      if operation == "add":
+        return (a+b)
+      if operation == "sub":
+        return (a-b)
+      if operation == "mul":
+        return (a*b)
+      if operation == "div":
+        return (a/b)
+      
+
+
+  if __name__ == '__main__':
+      a,b=10454,314046
+      result=calculator(a,b,"abb")
+      print(f"my result is {result}")
+
+  ```
+  > 執行 `python experiments.py`
+
+* (50:24) 修改 `experiments.py`
+  ```python
+    import mlflow
+
+  def calculator(a,b,operation=None):
+      if operation == "add":
+        return (a+b)
+      if operation == "sub":
+        return (a-b)
+      if operation == "mul":
+        return (a*b)
+      if operation == "div":
+        return (a/b)
+      
+
+
+  if __name__ == '__main__':
+      a,b,opt=10454,314046,"add" ## a,b,opt=104,314,"sub" (再次測試)
+      with mlflow.start_run():  ## 意味著 MLflow server will start
+        result=calculator(a,b,opt)
+        mlflow.log_params("a",a)
+        mlflow.log_params("b",b)
+        mlflow.log_params("opt",opt)
+        print(f"my result is {result}")
+        mlflow.log_params("result", result)
+  ```
+  > 執行 `python experiments.py` \
+  > 根目錄下會建立 `/mlflow` 資料夾
+
+* (57:51) 修改 `experiments.py`
+  ```python
+  a,b,opt=109,3142,"div" ## a,b,opt=10903406,31424565,"mul" (再次測試)
+  with mlflow.start_run():
+    ...
+    print(f"my result regrading {opt} is {result}")
+    ...
+
+  ```
+  執行 `python experiments.py` 
+
+* (1:04:48) 執行 `mlflow ui`
