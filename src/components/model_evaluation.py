@@ -28,13 +28,15 @@ class ModelEvaluation:
              model_path=os.path.join("artifacts","model.pkl")
              model=load_object(model_path)
 
-             #mlflow.set_registry_uri("")
+             #mlflow.set_registry_uri("") ## where you want to register your model
+             ## comment it out. We are doing in the local only. Not doing any sort of like a cloud or 
+             ## not going to push the model in like S3 or other repository. not going to store it anywhere else
              
              logging.info("model has register")
 
-             tracking_url_type_store=urlparse(mlflow.get_tracking_uri()).scheme
+             tracking_url_type_store=urlparse(mlflow.get_tracking_uri()).scheme 
 
-             print(tracking_url_type_store)
+             print(tracking_url_type_store) ## Lecture Demo 測試
 
 
 
@@ -49,7 +51,7 @@ class ModelEvaluation:
                 mlflow.log_metric("mae", mae)
 
                  # Model registry does not work with file store
-                if tracking_url_type_store != "file":
+                if tracking_url_type_store != "file": ## set one cloud location, you won't get 'file' over here.
 
                     # Register the model
                     # There are other ways to use the Model Registry, which depends on the use case,

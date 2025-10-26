@@ -371,3 +371,10 @@
 * (1:07:30) Demo run `mlflow ui` locally (1:16:24 done)
 
 * (1:21:10) 切換回到 Gemstone-Price-Prediction-End-to-End-Pipeline 專案
+
+* (1:22:22) 建立 `src/components/model_evaluation.py`
+
+* (1:42:05) 輸入 "give me all mlflow methods" 在 ChatGpt 中
+
+* (1:46:15) 修改(新增) `src/pipeline/training_pipeline.py`
+  > 執行 `python src/pipeline/training_pipeline.py`
