@@ -377,4 +377,8 @@
 * (1:42:05) 輸入 "give me all mlflow methods" 在 ChatGpt 中
 
 * (1:46:15) 修改(新增) `src/pipeline/training_pipeline.py`
-  > 執行 `python src/pipeline/training_pipeline.py`
+  > 執行 `python src/pipeline/training_pipeline.py` (Lecture Demo 遇到一些錯誤)
+
+* (1:57:20) 成功執行 `python src/pipeline/training_pipeline.py`
+
+* (2:03:10) Git commit ("mlflow added")
