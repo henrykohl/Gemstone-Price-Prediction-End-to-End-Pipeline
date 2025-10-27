@@ -370,6 +370,8 @@
 
 * (1:07:30) Demo run `mlflow ui` locally (1:16:24 done)
 
+---
+
 * (1:21:10) 切換回到 Gemstone-Price-Prediction-End-to-End-Pipeline 專案
 
 * (1:22:22) 建立 `src/components/model_evaluation.py`
