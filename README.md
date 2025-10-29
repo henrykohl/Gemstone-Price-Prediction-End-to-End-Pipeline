@@ -258,8 +258,10 @@
   > `python app.py`
   > - 開啟 browser (網址最後為 `:8000` 與 `:8000/predict`)
 
-* (18:05) 啟用新個 Conda Lab -- practicstools 
-  > 也算是要建立新的 GitHub
+* (18:05) 啟用新個 Conda Lab 
+  > 也算是要建立新的 GitHub \
+  > 此部分 Lecture 筆記，參考 [practicstools GitHub](https://github.com/henrykohl/practicstools)
+
 
 * 建立 `requirements.txt`
   ```txt
@@ -385,3 +387,13 @@
 * (1:57:20) 成功執行 `python src/pipeline/training_pipeline.py`
 
 * (2:03:10) Git commit ("mlflow added")
+
+* 除錯筆記 -- 直些執行 Lecture demo 會產生兩個錯誤： 
+  - Error 1：<font color="orange">No module named 'distutils._modified'</font>
+  - Error 2：<font color="orange">PermissionError: [Errno 13] Permission denied: '/config'</font>
+
+* Error 1 解決方式：安裝 `setuptools==68.2.2`，將其加入`requirements_dev.txt`
+  > 執行 `pip install -r requirements_dev.txt` 安裝
+
+* Error 2 解決方式：在 replicate 此專案的 repository 時，初始要把資料夾 `/mlruns` 刪除
+  > 執行 `python src/pipeline/training_pipeline.py` 回新建一個資料夾 `/mlruns`
