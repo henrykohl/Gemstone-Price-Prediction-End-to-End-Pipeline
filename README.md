@@ -290,3 +290,15 @@
 
 * Error 2 解決方式：在 replicate 此專案的 repository 時，初始要把資料夾 `/mlruns` 刪除
   > 執行 `python src/pipeline/training_pipeline.py` 回新建一個資料夾 `/mlruns`
+
+# Lecture 14 Note -- [DVC & Airflow in End-to-End Project](https://www.youtube.com/watch?v=WwwvtPgjpQw)
+
+* (15:05) 開啟 [practicaltools](https://github.com/henrykohl/practicstools) Github
+  > 清空(移除所有檔案)
+
+* (17:17) 執行 
+  ```bash
+  ls -a
+  rm -rf .git
+  ls -a
+  ```
