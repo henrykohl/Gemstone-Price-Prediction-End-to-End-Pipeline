@@ -302,3 +302,158 @@
   rm -rf .git
   ls -a
   ```
+
+* [DVC Documentation](https://dvc.org/doc)
+
+* (22:30) 執行 `git remote -v`
+  > haven't initialized the git. So it shows "fatal: not a git repository"
+
+* 執行 
+  ```bash
+  git init
+  ls -a
+  git status
+  touch README.md
+  git status
+  #git commit -m "first commit"
+  git add README.md
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your name"
+  git commit -m "first commit"
+  git status
+  ```
+
+* (28:27) without 'git', we cannot use DVC.
+
+* (38:43) `touch test.py`
+  ```python
+  import pandas as pd
+  Data=[
+    {"name":"sunny","age":28,"city":"bhopal"},
+    {"name":"sudhanshu","age":33,"city":"Delhi"},
+    {"name":"krish","age":35,"city":"bengalore"},
+    {"name":"vikas","age":29,"city":"pune"}
+  ]
+
+  Data = pd.DataFrame(Data)
+
+  Data.to_csv("data/data.csv",index=False)
+  ```
+* 建立 `/data` 資料夾
+
+* (33:20) 執行
+  ```bash
+  git status
+  git add test.py
+  git commit -m "second commit"
+  git log
+
+  git checkout 編號 # 編號是 commit id
+  ```
+
+* (37:20) 執行
+  ```bash
+  python test.py
+  pip list # pandas 還未安裝
+  conda create -p venv python=3.8 -y
+  ```
+
+* (38:24) 執行 
+  ```bash
+  touch requirements.txt
+  conda activate ./venv
+  pip install -r requirements.txt
+  ````
+  > 建立 `requirements.txt` 
+  > > ```python
+  > > pandas
+  > > ```
+
+* (40:20) 執行 `python test.py`
+
+* (44:29) 修改 `requirements.txt`
+  ```txt
+  pandas
+  dvs
+  ```
+* [Get Started with DVC](https://dvc.org/doc/start)
+
+* (45:55) 再次執行 `pip install -r requirements.txt`
+
+* 執行 
+  ```bash
+  python
+  import dvc
+  exit()
+
+  git status ## 顯示 untracked files
+  ```
+
+* (48:45) 執行 `touch .gitignore`
+  ```txt
+  /venv
+  ```
+  
+* (51:12) 執行 `dvc init`
+  > 自動建立 `.dvcignore`
+
+* (53:08) 查看 `.dvc` 資料夾
+
+* (56:35) 執行 `git status`
+  ```txt
+  .dvc/.gitignore
+  .dvc/config
+  .dvcignore
+  ```
+  > Changes to be committed automatically
+
+* (58:10) 執行 
+  ```bash
+  git commit -m "third commit"
+  git status
+  ```
+
+* (1:00:07) `dvc add data/data.csv`
+  > 產生 `data.csv.dvc` 檔案
+
+* (1:04:31) 
+  <pre>
+  We never use git/github for data management/versioning
+
+    git/github
+      |
+      |------> Source Code Management[SCM] (O) / Data Tracking (X)
+      1. Storage size (<25MB)
+      2. Conflict resolution (SCM:version)
+      3. Performance (pushing data causes degradation performance)
+  </pre>
+
+* (1:13:40) 執行 `git status`
+
+* (1:14:45) 執行 `git commit -m "fourth commit"`
+  > "nothing added to commit..."
+
+* (1:15:59) 新增一行資料 `data/data.csv`
+  ```csv
+  ...
+  dipesh,31,agra 
+  ```
+
+* 在 `data.csv.dvc` 查看 md5 的 id
+
+* (1:16:21) 執行 `dvc add data/data.csv`
+  > 在 `data.csv.dvc` 中 md5 的 id 發生改變
+
+* (1:17:00) 執行 `git status`，沒有新的改變 
+
+* `.dvc` 資料夾中產生 `/cache` 資料夾
+
+* (1:18:40) 再新增一行資料 `data/data.csv`
+  ```csv
+  ...
+  rahul,30,goa 
+  ```
+
+* (1:18:52) 執行 `dvc add data/data.csv`
+  > `.dvc/cache` 中 又會新增一個資料夾 \
+  > 在 `data.csv.dvc` 中 md5 的 id 又再次發生改變
