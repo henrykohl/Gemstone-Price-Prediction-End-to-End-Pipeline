@@ -457,3 +457,76 @@
 * (1:18:52) 執行 `dvc add data/data.csv`
   > `.dvc/cache` 中 又會新增一個資料夾 \
   > 在 `data.csv.dvc` 中 md5 的 id 又再次發生改變
+
+* (1:20:56) 再新增一行資料 `data/data.csv`
+  ```csv
+  ...
+  paul,28,mumbai
+  ```
+
+* (1:21:05) 執行 `dvc add data/data.csv`
+  > `.dvc/cache` 中 又會新增一個資料夾 \
+  > 在 `data.csv.dvc` 中 md5 的 id 又再次發生改變
+
+* (1:27:45) 刪除 在 `.dvc/cache` 下所有資料夾
+
+* (1:28:15) 在 `data/data.csv` 中刪除最後三筆資料，保留前五筆資料
+
+* (1:28:17) `dvc add data/data.csv`
+  > `.dvc/cache` 中 新增一個資料夾 \
+  > 在 `data.csv.dvc` 中 md5 的 id 發生改變
+
+* (1:29:55) 執行 
+  ```bash
+  git add data/data.csv.dvc
+  git commit -m "first version"
+  ```
+
+* (1:30:25) 新增一行資料 `data/data.csv`
+  ```csv
+  ...
+  dipesh,31,agra 
+  ```
+
+* (1:30:40) 執行 `dvc add data/data.csv`
+  > 在 `data.csv.dvc` 中 md5 的 id 發生改變 \
+  > `.dvc/cache` 中 新增一個資料夾 
+
+* (1:31:11) 執行 
+  ```bash
+  git add data/data.csv.dvc
+  git commit -m "second version"
+  ```
+
+* (1:30:25) 新增一兩行資料 `data/data.csv`
+  ```csv
+  ...
+  rahul,30,goa 
+  paul,28,mumbai
+  ```
+
+* (1:31:52) 執行 
+  ```bash
+  git add data/data.csv.dvc ## md5 的 id 改變
+  git commit -m "third version"
+  ```
+
+* (1:32:33) 在 `data/data.csv` 中刪除最後三四筆資料，保留前四筆資料
+
+* (1:32:40) 執行 
+  ```bash
+  dvc add data/data.csv ## md5 的 id 改變
+  git add data/data.csv.dvc 
+  git commit -m "fourth version"
+  ```
+
+* (1:33:55) 執行 `git log`
+  > 複製一個 commit 的 **id**
+
+* (1:34:31) 執行 
+  ```bash
+  git checkout 剛複製的id
+  dvc checkout
+  ```
+
+* (1:35:29)
