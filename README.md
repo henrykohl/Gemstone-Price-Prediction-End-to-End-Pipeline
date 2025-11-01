@@ -529,4 +529,55 @@
   dvc checkout
   ```
 
-* (1:35:29)
+* (1:35:29) 再次執行 `git log`
+  > 複製 second version 的 commit 的 **id**
+
+* (1:35:42) 執行 
+  ```bash
+  git checkout 剛複製的id
+  dvc checkout
+  ```
+  > `data/data.csv` 改變成對應的版本 (second version)
+
+* (1:36:10) 複製 third version 的 commit 的 **id**
+  ```bash
+  git checkout 剛複製的id
+  dvc checkout
+  ```
+  > `data/data.csv` 改變成對應的版本 (third version)
+
+* (1:43:23) `dvc remote add -d remote_storage local_path` 
+  > remote_storage 與 local_workspace_path 依據實際的環境輸入
+
+* (1:45:53) 執行 `dvc push`
+
+* 建立 `myremotestorage` 資料夾
+  
+* (1:48:46) 執行 `dvc remote add -d remote_storage2 /config/workspace/myremotestorage`
+
+* (1:49:35) 在 `/myremotestorage` 中的檔案新增兩筆資料
+  ```txt
+  ...
+  aditya,31,pune
+  dibyanshu,32,noida
+  ```
+
+* (1:49:48) 執行 
+  ```bash
+  dvc add data/data.csv
+  git add data/data.csv.dvc
+  git commit -m "latest version" ## 發生 conflict ??
+  ```
+
+* () Lecture 這裡有點亂（發生問題，解決時，commands 被擋住）
+  ```bash
+  git commit .dvc/config
+  git add .dvc/config
+  git commit -m "config added"
+  dvc push
+  ```
+
+* (1:55:11) 秀出 commands
+
+* (1:57:27~2:01:12) 建立 `dvc.yaml` 檔案
+  > Review 今天 DVC，且 Overview 下一個課程 Airflow  
