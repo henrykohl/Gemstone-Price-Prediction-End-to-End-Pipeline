@@ -419,7 +419,19 @@
   ```
   
 
-* (40:59) Check `dvc.lock` (記下各 md5 編碼)
+* (40:59) Check `dvc.lock` (記下'artifact.txt'個' md5 編碼)
 
 * (41:55) 執行 `dvc repo`
+
+* (42:09) 再 Check `dvc.lock` 
+  > 'artifact.txt' 的 md5 編碼 沒變 \
+  > 'stage_01' 的 md5 編碼改變了 \
+  > 'stage_02' 的 md5 編碼改變了 \
   
+* `/.dvc/cache/runs` 中會產生新的資料夾
+
+* (44:42) 執行 `dvc dag`
+
+* (Lecture) 建立 Github repository -- 'DVC-mlflow'，將本堂 code 儲放於此。但 demo 有些問題。 
+
+* (52:58) 切換回 Gemstone-Price-Prediction-End-to-End-Pipeline 專案
