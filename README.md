@@ -63,6 +63,19 @@
 
 * If it didn't activate the "env" environment，手動執行 `source activate ./env`
 
+* (48:05) 完成 `requirements_dev.txt`
+  ```txt
+  pandas
+  scikit-learn
+  numpy
+  seaborn 
+  flask
+  mlflow==2.2.2
+  dvc
+
+  -e .
+  ```
+
 * 執行 `pip install -r requirements_dev.txt`
 
 * (57:00) Git commit 提交 ()
@@ -73,6 +86,14 @@
 
 * 自行建立 `notebooks/data` 資料夾，放入 `raw.csv`、`test.csv`、`train.csv`三個資料檔案 -- [Resource](https://github.com/abhijitpaul0212/GemstonePricePrediction/tree/master/artifacts)
   > `raw.csv` is `gemstone.csv` used in Lecture 10.
+
+* Lecture 10 主要在完成 `experiment/experiments.ipynb` (始於 'Lecture 10 begins')
+
+* (29:30) 在 `requirements_dev.txt` 中加入 'ipykernel'
+
+* (1:38:15) 在 `requirements_dev.txt` 中加入 'xgboost'
+
+* (2:05:31) Git commit ("model training successful")
 
 * (32:45) Machine Learning Pipeline
   1. data ingestion
