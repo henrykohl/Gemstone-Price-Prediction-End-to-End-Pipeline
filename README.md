@@ -321,7 +321,9 @@
 
 # Lecture 15 Note -- [Airflow in End-to-End Project](https://www.youtube.com/watch?v=JrON6Np32TM)
 
-+ ( ~ 52:58)  此部分 Lecture 筆記，參考 [practicstools GitHub](https://github.com/henrykohl/practicstools)
++ ( ~ 52:58)  此部分 Lecture 筆記，參考 [My practicstools GitHub](https://github.com/henrykohl/practicstools)
 
-* (52:58) 切換回 Gemstone-Price-Prediction-End-to-End-Pipeline 專案
+* (52:58) 切換回 <font color="orange">**FSDSMENDTOEND**</font> 專案
   > 注意，此 Lecture 的 Resource 變成 [ML-Project(Docker+MLFlow+Dagshub)](https://github.com/sunnysavita10/ML-Project-With-Docker-MLFLOW-and-Dagshub)
+
+* More details: [My FSDSMENDTOEND Github](https://github.com/henrykohl/ML-Project-With-Docker-MLFLOW-and-Dagshub)
