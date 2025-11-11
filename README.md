@@ -2,7 +2,9 @@
 
 * Github Resource：[Gemstone-Price-Prediction-End-to-End-Pipeline](https://github.com/sunnysavita10/Gemstone-Price-Prediction-End-to-End-Pipelin)
 
-* [My Gemstone Github](https://github.com/henrykohl/Gemstone-Price-Prediction-End-to-End-Pipeline)
+* 自存 Github 位置 [My Gemstone Github](https://github.com/henrykohl/Gemstone-Price-Prediction-End-to-End-Pipeline)
+
+* 專案網址 [Regression with a Tabular Gemstone Price Dataset](https://www.kaggle.com/competitions/playground-series-s3e8)
 
 # Lecture 9 Note -- [MLOps End to End Project](https://www.youtube.com/watch?v=G6frVmkVMr4)
 
@@ -59,28 +61,27 @@
 
 ## (39:50) Implementation (in VS Code)
 
-* 完成 `init_setup.sh`，執行 `base init_setup.sh`
+* 完成 `init_setup.sh`，執行 
+  ```bash
+  base init_setup.sh
+  ```
 
 * If it didn't activate the "env" environment，手動執行 `source activate ./env`
 
-* (48:05) 完成 `requirements_dev.txt`
+* (48:05) 完成 `requirements_dev.txt` 與 Lecture 所提供的唯一不同，自行加入（之後需要用到）
   ```txt
-  pandas
-  scikit-learn
-  numpy
-  seaborn 
-  flask
-  mlflow==2.2.2
-  dvc
-
-  -e .
+  setuptools==68.2.2
   ```
 
-* 執行 `pip install -r requirements_dev.txt`
+* (51:15) 執行 `pip install -r requirements_dev.txt`
 
-* (57:00) Git commit 提交 ()
+* (56:00) Git commit 提交 ("latest commit")
 
-* (1:04:00) `experiment/experiments.ipynb`
+* (59:15) Show the command history
+
+* (1:02:30) [Regression with a Tabular Gemstone Price Dataset](https://www.kaggle.com/competitions/playground-series-s3e8)
+
+* (1:04:30 - end) 實作 `experiment/experiments.ipynb`
 
 # Lecture 10 Note -- [MLOps End to End Project - Model Building](https://www.youtube.com/watch?v=6TvfUdnUXNY)
 
@@ -90,10 +91,6 @@
 * Lecture 10 主要在完成 `experiment/experiments.ipynb` (始於 'Lecture 10 begins')
 
 * (29:30) 在 `requirements_dev.txt` 中加入 'ipykernel'
-
-* (1:38:15) 在 `requirements_dev.txt` 中加入 'xgboost'
-
-* (2:05:31) Git commit ("model training successful")
 
 * (32:45) Machine Learning Pipeline
   1. data ingestion
@@ -105,6 +102,10 @@
   - imbalanced data
   - encoding step
   4. Model
+
+* (1:38:15) 在 `requirements_dev.txt` 中加入 'xgboost'
+
+* (2:05:28) Git commit ("model training successful")
 
 # Lecture 11 Note -- [MLFlow & DVC integration](https://www.youtube.com/watch?v=fhWVCMjXmw0)
 
