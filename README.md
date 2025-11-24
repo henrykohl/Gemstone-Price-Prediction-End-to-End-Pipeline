@@ -63,7 +63,7 @@
 
 * 完成 `init_setup.sh`，執行 
   ```bash
-  base init_setup.sh
+  bash init_setup.sh
   ```
 
 * If it didn't activate the "env" environment，手動執行 `source activate ./env`
